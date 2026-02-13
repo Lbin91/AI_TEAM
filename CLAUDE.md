@@ -1,8 +1,8 @@
 # CLAUDE Adapter
 
 ## Read Order
-1. `README.md`
-2. `AGENTS.md`
+1. `AGENTS.md`
+2. `README.md` (project context)
 3. `PERSONA_GUIDE.md`
 4. Required files in `personas/*.md`
 

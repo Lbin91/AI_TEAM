@@ -1,53 +1,42 @@
-# AI_TEAM Router README (Agent-Only)
+# AI_TEAM
 
-This repository is an agent routing hub, not a human-facing handbook.
-Goal: map each request to the right persona set and return executable output.
+Shared persona SSOT for coding and writing agents.
 
-## Scope
-- Claude Code
-- Codex
-- Gemini
-- Antigravity
-- Openclaw
-- Nanobot
+## For AI Agents
+Start with `AGENTS.md`.
 
-## Read Order
-1. `AGENTS.md` (global contract)
-2. Adapter file (`CLAUDE.md`, `GEMINI.md`, `CODEX.md`)
-3. `PERSONA_GUIDE.md` (index, routing, bundles)
-4. `personas/*.md` (persona specs)
-5. `AI_TEAMMATE_TEMPLATE.md` (new persona template)
+Then read, in order:
+1. Adapter file (`CLAUDE.md`, `CODEX.md`, `GEMINI.md`) when applicable
+2. `PERSONA_GUIDE.md`
+3. `personas/*.md`
+4. `AI_TEAMMATE_TEMPLATE.md` (for new persona creation)
 
-## Minimal Execution Flow
-1. Classify request: `code | product | design | docs | ai | security | test | novel`.
-2. Set risk: `low | medium | high`.
-3. Select one primary persona and up to two support personas.
-4. If security/compliance is involved, include `P10`.
-5. If release regression risk exists, include `P12`.
-6. Return output using the shared Output Contract.
+## What This Repository Provides
+- Stable persona definitions for common task domains
+- Selection/routing rules and bundles
+- A template for creating new personas without drift
+- SSOT setup guide for multi-device use (`SSOT_SETUP.md`)
 
-## Default Routing Map
-- Production code: `P03 + P05 + P10 + P12`
-- Product/PRD: `P01 + P11 (+P02)`
-- Design/UX: `P08 + P04 (+P01)`
-- AI/LLM systems: `P06 + P07 (+P10)`
-- Security/compliance: `P10 + domain primary`
-- QA/testing: `P12 + domain primary (+P10)`
-- Novel/manuscript: `P13 (+P09)`
-
-## Missing Persona Rule
-Create a new persona only when existing personas cannot separate responsibility cleanly.
-
-Required actions:
-- Use `AI_TEAMMATE_TEMPLATE.md`
-- Save as `personas/<new_persona>.md`
-- Update `PERSONA_GUIDE.md` (index, routing rule, and bundle if needed)
-
-## Required Response Metadata
-```yaml
-selection:
-  primary: Pxx
-  support: [Pxx, Pxx]
-  reason: short
-  risk: low|medium|high
+## Repository Layout
+```text
+AGENTS.md                # Global contract for AI agents
+PERSONA_GUIDE.md         # Persona index, routing, bundles, QC
+AI_TEAMMATE_TEMPLATE.md  # Canonical persona authoring template
+SSOT_SETUP.md            # Multi-device SSOT setup (symlink/submodule)
+CLAUDE.md                # Claude adapter
+CODEX.md                 # Codex adapter
+GEMINI.md                # Gemini adapter
+personas/*.md            # Persona specifications
 ```
+
+## Quick Start (Human Maintainers)
+1. Clone this repository once per device to `~/.AI_TEAM`.
+2. In each project, link `.AI_TEAM` to `~/.AI_TEAM` (or use submodule fallback).
+3. Keep persona edits centralized in this repo.
+
+See `SSOT_SETUP.md` for exact commands.
+
+## Public Repository Policy
+- Keep content non-sensitive and portable.
+- Do not commit API keys, secrets, private credentials, or personal data.
+- Keep persona files in English for token efficiency and cross-agent consistency.
