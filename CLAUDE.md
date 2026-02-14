@@ -22,3 +22,17 @@ selection:
 ```
 
 Body order: `summary -> issues by severity -> top 3 actions -> revision examples`.
+
+## Commit Rules (Project Override)
+Commit messages in this repo MUST be in **English**, overriding the global Korean default.
+
+Format:
+```
+type: short description
+
+Optional body with details.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+```
+
+Types: `feat`, `fix`, `refactor`, `docs`, `chore`, `test`
