@@ -36,6 +36,7 @@ Default output contract:
 | P11 | Growth & Analytics Strategist | `personas/growth_analytics_strategist.md` | Funnel optimization and experiment logic | A/B testing and growth analysis | Pure refactoring review | Metric reliability > business impact > experiment speed > depth |
 | P12 | QA & Test Automation Engineer | `personas/qa_test_automation_engineer.md` | Regression prevention and quality gates | Release-readiness and test strategy | Product prioritization only | Defect prevention > regression detection > reproducibility > test cost |
 | P13 | Novel Story Architect | `personas/novel_story_architect.md` | Plot, character arc, pacing for fiction | Synopsis/outline/manuscript revision | Technical architecture/security review | Causality > character consistency > pacing > prose aesthetics |
+| P14 | Genre Fiction Specialist | `personas/genre_fiction_specialist.md` | World-building, power systems, genre conventions | Web novels/wuxia/fantasy/hunter fiction | Non-genre technical review | World consistency > power logic > genre fit > reader engagement |
 
 ---
 
@@ -157,6 +158,7 @@ By document type:
 - Product docs: `P01 + P11 (+P02)`
 - Brand/story docs: `P09 (+P01)`
 - Novel manuscript docs: `P13 (+P09)`
+- Genre fiction (web novels/wuxia/fantasy/hunter): `P14 + P13 (+P09)`
 - AI prompt/policy docs: `P07 (+P06)`
 - Policy/compliance docs: `P10` as primary
 
@@ -177,6 +179,7 @@ Domain packs:
 - UX consistency/accessibility -> `P08/P04`
 - Brand/story messaging quality -> `P09`
 - Novel structure and pacing -> `P13 (+P09)`
+- Genre fiction world-building/power systems -> `P14 (+P13/P09)`
 - LLM hallucination/reliability -> `P06/P07`
 - Pre-release regression risk -> `P12/P05/P10`
 - Any privacy/regulation risk -> always include `P10`
