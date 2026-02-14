@@ -127,7 +127,29 @@ Optional usage with explicit path:
 aiteam-use /path/to/project
 ```
 
-## 8) Guardrails
+## 8) Global Gitignore (Required)
+`.AI_TEAM` is a symlink and should never be committed. Use a global gitignore to exclude it from all projects at once.
+
+```bash
+# Create ~/.gitignore_global (or append to existing)
+echo '.AI_TEAM/' >> ~/.gitignore_global
+
+# Register with Git
+git config --global core.excludesfile ~/.gitignore_global
+```
+
+Verify:
+```bash
+git config --global core.excludesfile
+# → /Users/<you>/.gitignore_global
+```
+
+> **Why global instead of per-project `.gitignore`?**
+> - No need to add the entry to every project individually.
+> - `.AI_TEAM` is a dev-environment artifact, same category as `.idea/` or `.vscode/`.
+> - Team members who don't use AI_TEAM are unaffected.
+
+## 9) Guardrails
 - Do not maintain duplicate persona copies inside consumer projects.
 - Do not fork per project unless governance explicitly requires divergence.
 - If divergence is required, use a documented branch policy, not ad-hoc edits.
